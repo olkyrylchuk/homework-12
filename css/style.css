@@ -1,0 +1,168 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  min-width: 320px;
+}
+
+.container {
+  margin: 0 auto;
+  padding: 0 10px;
+}
+
+.header {
+  background-image: url(../img/main-bg.jpg);
+  min-height: 100vh;
+  max-width: 100%;
+  background-size: cover;
+  background-position: center center;
+  margin-bottom: 64px;
+}
+.header::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+}
+.header .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.header .container h1 {
+  display: none;
+}
+.header .container h3 {
+  display: inline-block;
+  position: absolute;
+  top: 45%;
+  font-weight: 300;
+  font-size: 35px;
+  color: #ffffff;
+  padding: 0 10px;
+  max-width: 300px;
+}
+.header .container h3 b {
+  text-transform: uppercase;
+  font-weight: 900;
+  font-size: 35px;
+  color: #FF6332;
+}
+
+main {
+  margin-bottom: 40px;
+}
+main .container ul {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+main .container ul li {
+  list-style: none;
+}
+main .container ul li img {
+  padding: 5px 0;
+  max-width: 300px;
+  max-height: 100%;
+}
+
+.insta ul {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+.insta ul li {
+  list-style: none;
+  width: 50%;
+}
+.insta ul li img {
+  display: flex;
+  max-width: 100%;
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  min-height: 50px;
+  background-color: black;
+}
+.footer .container span {
+  font-weight: 300;
+  font-size: 12px;
+  letter-spacing: 0.05em;
+  color: #ffffff;
+}
+
+@media (min-width: 720px) {
+  main .container {
+    padding: 0 30px;
+  }
+  main .container ul {
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  main .container ul li img {
+    padding: 11px 0;
+    min-width: 315px;
+    width: 100%;
+  }
+
+  .insta ul li {
+    max-width: 25%;
+  }
+  .insta ul li img {
+    display: flex;
+    max-width: 100%;
+  }
+}
+@media (min-width: 1440px) {
+  body {
+    min-width: 1440px;
+  }
+
+  .container {
+    margin: 0 auto;
+    padding: 0 10px;
+    max-width: 1375px;
+  }
+
+  .header .container h3 {
+    font-size: 48px;
+    max-width: 450px;
+  }
+  .header .container h3 b {
+    font-size: 48px;
+  }
+
+  main .container ul {
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  main .container ul li img {
+    padding: 8px 0;
+    min-width: 425px;
+  }
+
+  .insta ul li {
+    max-width: 25%;
+  }
+  .insta ul li img {
+    display: flex;
+    max-width: 100%;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
