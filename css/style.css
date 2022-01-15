@@ -253,15 +253,16 @@ footer span {
     max-width: 100%;
     max-height: 100%;
   }
-}
-footer {
-  height: 69px;
-}
-footer span {
-  font-weight: 300;
-  font-size: 18px;
-  color: #ffffff;
-  letter-spacing: 0.05em;
+
+  footer {
+    height: 69px;
+  }
+  footer span {
+    font-weight: 300;
+    font-size: 18px;
+    color: #ffffff;
+    letter-spacing: 0.05em;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
