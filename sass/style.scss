@@ -10,21 +10,36 @@ $color-white: #ffffff;
 body {
     font-family: 'Roboto', sans-serif;
     font-weight: 300;
-    min-width: 320px;
+}
+
+.visually-hidden {
+    display: none;
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    white-space: nowrap;
+    clip-path: inset(100%);
+    clip: rect(0 0 0 0);
+    overflow: hidden;
 }
 
 .container {
+    max-width: 320px;
     margin: 0 auto;
     padding: 0 10px;
 }
 
 .header {
+    position: relative;
     background-image: url(../img/main-bg.jpg);
     min-height: 100vh;
-    max-width: 100%;
+    width: 100%;
     background-size: cover;
     background-position: center center;
-    margin-bottom: 64px;
+    margin-bottom: 30px;
 
     &::after {
         content: '';
@@ -33,7 +48,7 @@ body {
         left: 0;
         right: 0;
         bottom: 0;
-        background: rgba(0, 0, 0, 0.5);
+        background: rgba(0, 0, 0, 0.49);
     }
 
     .container {
@@ -43,19 +58,19 @@ body {
         justify-content: center;
         text-align: center;
 
-        h1 {
-            display: none;
-        }
-
         h3 {
-            display: inline-block;
             position: absolute;
+            text-align: center;
+            align-items: center;
             top: 45%;
             font-weight: 300;
-            font-size: 35px;
+            font-size: 30px;
+            text-transform: uppercase;
+            line-height: 140%;
+            letter-spacing: 0.05em;
             color: $color-white;
-            padding: 0 10px;
-            max-width: 300px;
+            max-width: 320px;
+            z-index: 2;
 
             b {
                 text-transform: uppercase;
@@ -68,116 +83,167 @@ body {
 }
 
 main {
-    margin-bottom: 40px;
+    .collage {
+        margin-bottom: 30px;
 
-    .container {
-        ul {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-
-            li {
-                list-style: none;
-
-                img {
-                    padding: 5px 0;
-                    max-width: 300px;
-                    max-height: 100%;
-                }
-            }
-        }
-    }
-}
-
-.insta {
-    ul {
-        width: 100%;
-        display: flex;
-        flex-wrap: wrap;
-
-        li {
-            list-style: none;
-            width: 50%;
-
-            img {
-                display: flex;
-                max-width: 100%;
-            }
-        }
-    }
-}
-
-
-.footer {
-    display: flex;
-    align-items: center;
-    text-align: center;
-    min-height: 50px;
-    background-color: black;
-
-    .container {
-        span {
-            font-weight: 300;
-            font-size: 12px;
-            letter-spacing: 0.05em;
-            color: $color-white;
-        }
-    }
-}
-
-@media (min-width: 720px) {
-    main {
         .container {
-            padding: 0 30px;
-
             ul {
-                flex-direction: row;
-                justify-content: space-between;
-                flex-wrap: wrap;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
 
                 li {
+                    list-style: none;
+
+                    &:not(:last-child) {
+                        margin-bottom: 30px;
+                    }
+
                     img {
-                        padding: 11px 0;
-                        min-width: 315px;
-                        width: 100%;
+                        max-width: 100%;
+                        max-height: 100%;
                     }
                 }
             }
         }
     }
 
-    .insta {
+    .instagram {
+        position: relative;
+        width: 100%;
+
+        &::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.6);
+        }
+
         ul {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+
+            h3 {
+                position: absolute;
+                font-weight: 300;
+                font-size: 30px;
+                letter-spacing: 0.05em;
+                line-height: 140%;
+                text-transform: uppercase;
+                text-align: center;
+                align-items: center;
+                width: 100%;
+                color: $color-white;
+                z-index: 2;
+
+                b {
+                    font-weight: 900;
+                    color: $color-orange;
+                }
+            }
+
             li {
-                max-width: 25%;
+                list-style: none;
+                max-width: 50%;
 
                 img {
-                    display: flex;
                     max-width: 100%;
+                    max-height: auto;
                 }
             }
         }
     }
 }
 
+footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 40px;
+    background-color: #000;
 
-@media (min-width: 1440px) {
-    body {
-        min-width: 1440px;
+    span {
+        font-size: 12px;
+        color: $color-white;
     }
+}
+
+@media screen and (min-width: 768px) {
 
     .container {
-        margin: 0 auto;
-        padding: 0 10px;
-        max-width: 1375px;
+        max-width: 100%;
+        padding: 0 20px;
     }
 
+    main {
+        .collage {
+            margin-bottom: 30px;
 
+            .container {
+                ul {
+                    display: flex;
+                    flex-direction: row;
+                    flex-wrap: wrap;
+                    justify-content: space-around;
+                    align-items: center;
+                    max-width: 100%;
+
+                    li {
+                        max-width: 49%;
+
+                    }
+                }
+            }
+        }
+
+        .instagram {
+
+            ul {
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: space-between;
+                align-items: center;
+
+                li {
+                    list-style: none;
+                    max-width: 25%;
+
+                    img {
+                        max-width: 100%;
+                    }
+                }
+
+                h3 {
+                    position: absolute;
+                    text-align: center;
+                    align-items: center;
+
+                    br {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 1440px) {
     .header {
+        margin-bottom: 64px;
+
         .container {
+            padding: 0 30px;
+
             h3 {
                 font-size: 48px;
-                max-width: 450px;
+                max-width: 475px;
 
                 b {
                     font-size: 48px;
@@ -187,32 +253,73 @@ main {
     }
 
     main {
-        .container {
-            ul {
-                flex-direction: row;
-                justify-content: space-between;
-                flex-wrap: wrap;
+        .collage {
+            margin-bottom: 64px;
 
-                li {
+            .container {
+                ul {
+                    display: flex;
+                    flex-direction: row;
+                    flex-wrap: wrap;
+                    justify-content: space-between;
+                    align-items: center;
+                    max-width: 100%;
+
                     img {
-                        padding: 8px 0;
-                        min-width: 425px;
+                        min-width: 100%;
                     }
                 }
             }
         }
     }
 
-    .insta {
-        ul {
-            li {
-                max-width: 25%;
+    .instagram {
 
-                img {
-                    display: flex;
-                    max-width: 100%;
+        position: relative;
+        width: 100%;
+
+        ul {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 100s;
+
+            h3 {
+                font-size: 48px;
+
+
+                b {
+                    font-size: 48px;
                 }
             }
+
+            li {
+                list-style: none;
+                max-width: 25%;
+
+
+                &:last-child {
+                    margin: none;
+                }
+
+                img {
+                    max-width: 100%;
+                    max-height: 100%;
+                }
+            }
+        }
+    }
+
+    footer {
+        height: 69px;
+
+        span {
+            font-weight: 300;
+            font-size: 18px;
+            color: $color-white;
+            letter-spacing: 0.05em;
         }
     }
 }
